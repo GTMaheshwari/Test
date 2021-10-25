@@ -1,0 +1,5 @@
+---
+- name: Copy index file
+  template: 
+    src: /etc/ansible/role-index.html
+    dest: /var/www/html/index.html

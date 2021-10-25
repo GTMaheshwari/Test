@@ -1,0 +1,14 @@
+---
+- hosts: all
+  become: yes
+  tasks:
+  - name: Install Apache on Centos Server
+    yum: name=httpd state=latest
+   
+  - name: Start Apache on Centos Server
+    service: name=httpd state=started
+
+  - name: Copy index file
+    template:
+      src: index.html
+      dest: /var/www/html/index.html
